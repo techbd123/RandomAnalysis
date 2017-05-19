@@ -15,9 +15,9 @@ typedef long long int ll;
 typedef struct POINT Point;
 
 const int Size=1000;
-const double ptSize=1;
 const int minX=0,maxX=Size,minY=0,maxY=Size;
-
+const int screenX = 1000, screenY = 1000;
+const double ptSize=max(screenX,screenY)/Size;
 int arr[Size+1][Size+1];
 
 struct POINT
@@ -173,7 +173,7 @@ int main(int argc, char** argv)
     srand(time(0));
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
-    glutInitWindowSize(750,750);
+    glutInitWindowSize(screenX,screenY);
     glutInitWindowPosition(800,60);
     glutCreateWindow("Simple");
     init();
